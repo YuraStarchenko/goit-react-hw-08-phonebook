@@ -4,9 +4,9 @@ import { Container, Text, Title, TitleText, Book } from './Container.styled.js';
 import { ContactList } from '../components/ContactList/ContactList';
 import { Filter } from '../components/Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/contacts/selectors';
+import { selectError, selectIsLoading } from 'redux/contacts/contactsActions';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contacts/operations';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
 
 export const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);

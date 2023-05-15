@@ -1,8 +1,8 @@
 import { Label, Form, Input, Button } from './ContactForm.styled.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors.jsx';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/contactsActions.jsx';
+import { addContact } from 'redux/contacts/contactsOperations.jsx';
 import { Formik } from 'formik';
 
 export const ContactForm = () => {
