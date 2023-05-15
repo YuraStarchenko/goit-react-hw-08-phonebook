@@ -1,3 +1,8 @@
+import { createGlobalStyle } from 'styled-components';
+import 'modern-normalize';
+
+export const GlobalStyle = createGlobalStyle`
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	background-color: #e1b6b6;
 }
 
 code {
@@ -19,5 +25,19 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+	margin: 0;
 }
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+`;
