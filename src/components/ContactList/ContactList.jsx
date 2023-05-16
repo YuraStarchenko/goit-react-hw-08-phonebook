@@ -4,9 +4,9 @@ import { deleteContact } from 'redux/contacts/contactsOperations';
 import { selectContacts, selectFilter } from 'redux/contacts/contactsActions';
 
 export const ContactList = () => {
-  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
+  const dispatch = useDispatch();
+	const filter = useSelector(selectFilter);
 
   const filterContacts = contacts.filter(el =>
     el.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())

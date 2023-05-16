@@ -9,8 +9,8 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { contactsSlice } from './contacts/contactsSlice.jsx';
-import { setFilter } from './filter/filterSlice.jsx';
+import { contactsReducer } from './contacts/contactsSlice.jsx';
+import { filterReducer } from './filter/filterSlice.jsx';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice.jsx';
 
@@ -30,8 +30,8 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    contacts: contactsSlice.reducer,
-    filter: setFilter,
+    contacts: contactsReducer,
+    filter: filterReducer,
     auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware,
