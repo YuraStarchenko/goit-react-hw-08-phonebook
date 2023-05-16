@@ -48,4 +48,4 @@ export const contactsSlice = createSlice({
       .addMatcher(getActions('fulfilled'), fulfilledReducer),
 });
 
-// export const contactsReducer = contactSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
