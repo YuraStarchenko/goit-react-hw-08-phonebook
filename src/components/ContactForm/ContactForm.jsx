@@ -9,20 +9,18 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const handleSubmit = (value, { resetForm }) => {
-    let isDuplicate = true;
+    let isDuplicate = false;
 
-    contacts.map(
-      item =>
-        (isDuplicate = !item.name
-          .toLowerCase()
-          .includes(value.name.toLowerCase()))
+    const filteredContacts = contacts.filter(
+      item => item.name.toLocaleLowerCase() === value.name.toLocaleLowerCase()
     );
+    isDuplicate = filteredContacts.length === 0;
     if (isDuplicate) {
-      const contact = { name: value.name, phone: value.number };
+      const contact = { name: value.name, number: value.number };
       dispatch(addContact(contact));
       resetForm();
     } else {
-      Notify.info(`${value.name} is already in contacts`);
+      Notify.failure(`${value.name} is already in contacts`);
     }
   };
 

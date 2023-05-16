@@ -1,40 +1,41 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// GET @ /contacts
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/contacts');
-      return response.data;
+      const { data } = await axios.get('/contacts');
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
 
-// POST @ /contacts
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async ({ name, number }, thunkAPI) => {
     try {
-      const response = await axios.post('/contacts', { name, number });
-      return response.data;
+      const { data } = await axios.post('/contacts', { name, number });
+      Notify.success('Your contact added!');
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
 
-// DELETE @ /contacts/:id
 export const deleteContact = createAsyncThunk(
-  'contacts/deleteContacts',
+  'contacts/deleteContact',
   async (contactId, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${contactId}`);
-      return response.data;
+      const { data } = await axios.delete(`/contacts/${contactId}`);
+      Notify.success('Your contact deleted!');
+      return data;
     } catch (e) {
+      Notify.failure('Sorry, wrong delete, try reloading the page!');
       return thunkAPI.rejectWithValue(e.message);
     }
   }
