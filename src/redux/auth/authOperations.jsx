@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -24,8 +25,10 @@ export const register = createAsyncThunk(
       const { data } = await axios.post('/users/signup', credential);
       // After successful registration, add the token to the HTTP header
       setAuthHeader(data.token);
+      Notify.success('Your registration is successful!');
       return data;
     } catch (e) {
+      Notify.failure('Sorry, wrong register, try reloading the page!');
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -37,13 +40,15 @@ export const register = createAsyncThunk(
  */
 export const logIn = createAsyncThunk(
   'auth/login',
-  async (credential, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/users/login', credential);
+      const { data } = await axios.post('/users/login', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(data.token);
+      Notify.success('Your registration is successful!');
       return data;
     } catch (e) {
+      Notify.failure('Sorry, wrong request, try reloading the page!');
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -71,14 +76,14 @@ export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     // Reading the token from the state via getState();
-    const { persistedToken } = thunkAPI.getState().auth;
+		const persistedToken = thunkAPI.getState().auth.token;
     if (!persistedToken) {
       // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue('Something go wrong...');
     }
-    setAuthHeader(persistedToken);
     try {
       // If there is a token, add it to the HTTP header and perform the request
+      setAuthHeader(persistedToken);
       const { data } = await axios.get('/users/current');
       return data;
     } catch (e) {
