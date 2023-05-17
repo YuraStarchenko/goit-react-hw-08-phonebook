@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundImage from './img/contact.jpg';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./');
+  background-image: url(${backgroundImage});
   background-size: cover;
 }
 

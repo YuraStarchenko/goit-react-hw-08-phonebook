@@ -10,6 +10,7 @@ import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
 import { Contacts } from 'pages/Contacts';
+import { GlobalStyle } from '../GlobalStyle';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,29 +23,35 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute component={<Register />} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute component={<Login />} redirectTo="/contacts" />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute component={<Contacts />} redirectTo="/login" />
-          }
-        />
-        <Route path="*" element={<Home />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                component={<Register />}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute component={<Login />} redirectTo="/contacts" />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={<Contacts />} redirectTo="/login" />
+            }
+          />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+      <GlobalStyle />
+    </>
   );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { GlobalStyle } from '../GlobalStyle';
 
 const Container = styled.div`
   min-height: calc(100vh - 50px);
@@ -22,6 +23,7 @@ export default function Home() {
           💁‍♀️
         </span>
       </Title>
+      <GlobalStyle />
     </Container>
   );
 }
