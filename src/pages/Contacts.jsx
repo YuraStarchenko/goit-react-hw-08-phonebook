@@ -1,6 +1,6 @@
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { GlobalStyle } from '../GlobalStyle';
-import { Container, Text, Title, TitleText, Book } from './Container.styled.js';
+import { Container, Text, Title, TitleText, Book } from '../components/Container.styled.js';
 import { ContactList } from '../components/ContactList/ContactList';
 import { Filter } from '../components/Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';

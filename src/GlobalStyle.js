@@ -10,7 +10,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	background-color: #e1b6b6;
+  background-image: url('./');
+  background-size: cover;
 }
 
 code {
@@ -39,5 +40,4 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-
 `;
