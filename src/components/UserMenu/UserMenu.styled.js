@@ -13,14 +13,18 @@ export const Username = styled.p`
 export const Button = styled.button`
   display: inline-block;
   text-decoration: none;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 9px 10px;
+  border-radius: 20px;
   border: none;
   font-weight: 700;
   color: #f1ede1;
-  background-color: #1d4ed8;
+  background-color: #0000ff;
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
   cursor: pointer;
-  &.active {
-    color: #ada7cb;
+  cursor: pointer;
+  &:hover {
+    background-color: #2196f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
 `;
