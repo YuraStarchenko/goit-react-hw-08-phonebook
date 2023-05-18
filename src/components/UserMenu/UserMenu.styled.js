@@ -22,7 +22,6 @@ export const Button = styled.button`
   transition-property: background-color, fill;
   transition-duration: 250ms;
   cursor: pointer;
-  cursor: pointer;
   &:hover {
     background-color: #2196f3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
