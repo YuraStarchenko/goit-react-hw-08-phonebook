@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import BookRoundedIcon from '@mui/icons-material/BookRounded';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,7 +7,7 @@ import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from '../../hooks/useAuth';
-import { Container } from './AppBar.styled';
+import { Container, AppBar } from './AppBar.styled';
 
 export const ResponsiveAppBar = () => {
 	const { isLoggedIn } = useAuth();

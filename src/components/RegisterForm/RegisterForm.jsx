@@ -55,7 +55,7 @@ export const RegisterForm = () => {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={4} elevation={6} square>
+        <Grid item xs={12} sm={8} md={4} elevation={6} square="true">
           <Box
             sx={{
               my: 15,

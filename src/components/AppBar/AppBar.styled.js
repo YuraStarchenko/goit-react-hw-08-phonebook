@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const AppBar = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  background-color: #3b82f6;
 `;
 
 export const ImgMovies = styled.img`
@@ -20,7 +19,8 @@ export const Container = styled.div`
   margin-right: auto;
   display: flex;
   align-items: center;
-	justify-content: space-between;
+  justify-content: space-between;
   padding-left: 16px;
   padding-right: 16px;
+  color: #f1ede1;
 `;
