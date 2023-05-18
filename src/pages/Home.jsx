@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
-import logo from '../img/icons8-phone-book-100.png';
+import logo from '../img/contacts.png';
 
 const Container = styled.div`
   min-height: calc(100vh - 50px);
@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const ImgMovies = styled.img`
   padding-top: 50px;
-  background-image: url('../img/icons8-phone-book-100.png');
+  background-image: url('../img/contacts.png');
 `;
 
 const Title = styled.h1`
