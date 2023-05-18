@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GlobalStyle } from '../GlobalStyle';
-import logo from '../img/contacts.png';
+import logo from '../img/Bookmarks-amico.webp';
 
 const Container = styled.div`
   min-height: calc(100vh - 50px);
@@ -10,8 +10,8 @@ const Container = styled.div`
 `;
 
 const ImgMovies = styled.img`
+  width: 500px;
   padding-top: 50px;
-  background-image: url('../img/contacts.png');
 `;
 
 const Title = styled.h1`
@@ -23,7 +23,8 @@ const Title = styled.h1`
 export default function Home() {
   return (
     <Container>
-      <Title>
+			<Title>
+	Phone Book
         <ImgMovies src={logo} alt="Logo" />
       </Title>
       <GlobalStyle />
