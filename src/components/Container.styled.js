@@ -15,7 +15,7 @@ export const Book = styled.div`
   align-items: center;
   text-align: center;
   border: solid 3px #fbdddd;
-  width: 350px;
+  width: 330px;
   border-radius: 40px;
   background-color: #f2ecec;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
