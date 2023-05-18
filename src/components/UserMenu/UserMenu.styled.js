@@ -11,4 +11,16 @@ export const Username = styled.p`
 `;
 
 export const Button = styled.button`
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  color: #f1ede1;
+  background-color: #1d4ed8;
+  cursor: pointer;
+  &.active {
+    color: #ada7cb;
+  }
 `;
